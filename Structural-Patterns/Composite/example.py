@@ -108,9 +108,7 @@ class Composite(Component):
         children and so forth, the whole object tree is traversed as a result.
         """
 
-        results = []
-        for child in self._children:
-            results.append(child.operation())
+        results = [child.operation() for child in self._children]
         return f"Branch({'+'.join(results)})"
 
 
